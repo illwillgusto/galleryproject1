@@ -21,11 +21,20 @@
     box-sizing: border-box;  
 }
 
+body {
+    background-image: url(assets/sidewalk\ in\ space.jpeg);
+}
+
+.layout-container {
+    display: flex;
+}
+
 .background {
     background-color: var(--background);
     display: grid;
     place-items: center;
     height: 100vh;
+    flex-grow: 1;
 }
 
 .gallery {
@@ -85,6 +94,7 @@
   flex-direction: column;
   background-color: var(--sidebar-background);
   transition: max-width 0.2s ease-in-out;
+  flex: 0 0 18rem;
 }
 
 body.collapsed .sidebar {
