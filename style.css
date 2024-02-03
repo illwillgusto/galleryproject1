@@ -2,8 +2,15 @@
 :root {
     --background: #3C343D;
     --background-card: #6B626C;
+    --primary-color: #191919;
+    --primary: #408CF9;
+    --white: #FFFFFF;
+    --sidebar-primary-hover: #2B2B2F;
+    --sidebar-background: #141318;
 }
 
+/*The beginning attributes are for the galleries these are the main focus of this project, 
+ to focus on the sidebar I've created a navigation sidebar project */
 * {
     margin: 0;
     padding: 0;
@@ -54,4 +61,7 @@
     object-fit: cover;
     border-radius: 4px;
 }
+
+
+/*These are the attributes for the sidebar navigation*/
 
