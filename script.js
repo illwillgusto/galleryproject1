@@ -1,31 +1,12 @@
-const expand_btn = document.querySelector(".expand-btn");
+if (typeof window !== 'undefined')
+window.onload = () => {
+  const navMenu = document.querySelector('.nav-menu');
+  const navItems = document.querySelectorAll('.nav-item');
+  const hamburger = document.querySelector('.nav-toggle');
+  
+  const toggle = e => e.classList.toggle('is-active');
+  const toggleNav = ({ target }) => Array.from(navMenu.classList).includes('is-active') ? toggle(navMenu) : null;
 
-let activeIndex;
-
-expand_btn.addEventListener("click", () => {
-  document.body.classList.toggle("collapsed");
-});
-
-const current = window.location.href;
-
-const allLinks = document.querySelectorAll(".sidebar-links a");
-
-allLinks.forEach((elem) => {
-  elem.addEventListener("click", function () {
-    const hrefLinkClick = elem.href;
-
-    allLinks.forEach((link) => {
-      if (link.href == hrefLinkClick) {
-        link.classList.add("active");
-      } else {
-        link.classList.remove("active");
-      }
-    });
-  });
-});
-
-const searchInput = document.querySelector(".search__wrapper input");
-
-searchInput.addEventListener("focus", (e) => {
-  document.body.classList.remove("collapsed");
-});
+  hamburger.addEventListener('click', () => toggle(navMenu, 'is-active'));
+  Array.from(navItems).forEach(e => e.addEventListener('click', toggleNav));
+}
